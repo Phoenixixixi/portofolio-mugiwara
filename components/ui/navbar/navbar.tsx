@@ -14,8 +14,14 @@ import {
 import { ModeToggle } from './theme-trigerred'
 import { useState } from 'react'
 import React from 'react'
+import { usePathname } from 'next/navigation'
+
+import { Footer } from '../footer'
 
 export function NavbarComponent({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
   const navItems = [
     {
       name: 'About',
@@ -86,8 +92,11 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      <div className=" w-full min-h-screen md:p-26 md:pt-16 p-6 pt-8 ">
-        {children}
+      <div className=" w-full min-h-screen md:p-26 md:pt-16 p-6 pt-8 flex flex-col ">
+        <main className="flex-grow">
+          {children}
+        </main>
+        {!isHomePage && <Footer />}
       </div>
 
       {/* Navbar */}
