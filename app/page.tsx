@@ -17,6 +17,7 @@ export default function Home() {
           <Link
             className="min-w-32 rounded-full bg-white/10 dark:bg-black/20 backdrop-blur-lg border border-white/30
            dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-black dark:text-white hover:bg-white/20 dark:hover:bg-black/30 transition-all cursor-pointer"
+            href={'https://github.com/Phoenixixixi/portofolio-mugiwara'}
           >
             Github
           </Link>
