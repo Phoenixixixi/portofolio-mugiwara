@@ -13,10 +13,10 @@ export default function Home() {
           focused on performance, scalability, and clean architecture.
         </span>
         <div className="flex gap-x-4 md:pt-4 pt-8">
-          <Button className="min-w-32 rounded-full cursor-pointer">About Me</Button>
+          <Link className="flex items-center justify-center min-w-32 rounded-full cursor-pointer bg-black dark:bg-white text-white dark:text-black py-2 font-semibold" href={'/about'}>About Me</Link>
           <Link
-            className="min-w-32 rounded-full bg-white/10 dark:bg-black/20 backdrop-blur-lg border border-white/30
-           dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-black dark:text-white hover:bg-white/20 dark:hover:bg-black/30 transition-all cursor-pointer"
+            className="flex items-center justify-center min-w-32 py-2 rounded-full bg-white/10 dark:bg-black/20 backdrop-blur-lg border border-white/30
+           dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-black dark:text-white hover:bg-white/20 dark:hover:bg-black/30 transition-all cursor-pointer font-semibold"
             href={'https://github.com/Phoenixixixi/portofolio-mugiwara'}
           >
             Github
