@@ -24,6 +24,10 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     {
+      name: 'Home',
+      link: '/',
+    },
+    {
       name: 'About',
       link: '/about',
     },
