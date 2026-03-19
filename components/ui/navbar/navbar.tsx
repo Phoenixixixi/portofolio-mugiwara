@@ -64,10 +64,14 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
+            <div className='flex justify-center items-center'>
+
+              <MobileNavToggle
+                isOpen={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              />
+              <ModeToggle />
+            </div>
           </MobileNavHeader>
 
           <MobileNavMenu

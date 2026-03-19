@@ -4,7 +4,7 @@ import { Stack } from '@/components/home/stack'
 import Link from 'next/link'
 export default function Home() {
   return (
-    <div className="w-full h-full flex flex-col md:items-center md:pt-24 pt-12 ">
+    <div className="w-full min-h-screen flex flex-col md:items-center md:pt-24 pt-12 ">
       <SparklesBackground>
         <h1 className="md:text-3xl text-2xl lg:text-5xl font-bold text-center relative z-20 md:max-w-[60%] pt-12">
           Full Stack Developer
