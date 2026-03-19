@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator"
 import { EducationList } from "@/components/about/education-list"
 import { WorkExperience } from "@/components/about/work-experience"
 import { Stack } from "@/components/home/stack"
+import FotoArea from "@/components/about/foto-show"
 
 export default function Page() {
 
@@ -42,6 +43,10 @@ export default function Page() {
                     <p className="text-sm text-zinc-500 mt-2">The tools and technologies I use to bring ideas to life.</p>
                 </div>
                 <Stack />
+            </div>
+
+            <div className="w-full mt-12">
+                <FotoArea />
             </div>
         </div>
     )
