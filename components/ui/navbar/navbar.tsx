@@ -11,10 +11,13 @@ import {
   MobileNavMenu,
 } from '../resizable-navbar'
 
+import { FileDown } from 'lucide-react'
 import { ModeToggle } from './theme-trigerred'
 import { useState } from 'react'
 import React from 'react'
 import { usePathname } from 'next/navigation'
+
+import { Button } from '@/components/ui/button'
 
 import { Footer } from '../footer'
 
@@ -47,6 +50,7 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+
   return (
     <div className="relative w-full">
       <Navbar className="top-5">
@@ -54,8 +58,8 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
         <NavBody className="">
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4 z-99">
-            <NavbarButton variant="primary">Download CV</NavbarButton>
+          <div className="flex items-center gap-4 z-99  ">
+            <Button variant="default"><FileDown /></Button>
             <ModeToggle />
           </div>
         </NavBody>
@@ -94,7 +98,7 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
                 variant="primary"
                 className="w-full"
               >
-                Download CV
+                <FileDown />
               </NavbarButton>
             </div>
           </MobileNavMenu>
