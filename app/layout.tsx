@@ -4,6 +4,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { NavbarComponent } from '@/components/ui/navbar/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavbarComponent>{children}</NavbarComponent>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

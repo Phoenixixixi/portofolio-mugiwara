@@ -1,46 +1,8 @@
 "use client";
 
 import React from "react";
-
-interface EducationItem {
-  institution: string;
-  degree: string;
-  period: string;
-  points: string[];
-}
-
-const educationData: EducationItem[] = [
-  {
-    institution: "BINUS University",
-    degree: "Undergraduate in Information Technology",
-    period: "2025 - Present",
-    points: [
-      "Focus on Calculus, C languages, and Software Design",
-      "Self-taught modern web technologies like Next.js (not taught in campus curriculum)",
-      "Building projects with full-stack integration"
-    ]
-  },
-  {
-    institution: "Dicoding Academy",
-    degree: "Introduction To Web Developer",
-    period: "2023 - 2024",
-    points: [
-      "Learned fundamentals of HTML, CSS, and JavaScript",
-      "Built responsive web pages and basic web applications",
-      "Practiced problem-solving through hands-on projects"
-    ]
-  },
-  {
-    institution: "Telkom University",
-    degree: "Diploma in Computer Technology",
-    period: "2022 - 2025",
-    points: [
-      "Explored Internet of Things (IoT) and Hardware development",
-      "Built websites using HTML, CSS, and JavaScript",
-      "Studied programming fundamentals and data structures"
-    ]
-  },
-];
+import { EducationItem } from "@/types";
+import { educationData } from "@/data/about";
 
 export function EducationList() {
   return (

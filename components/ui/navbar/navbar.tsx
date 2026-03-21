@@ -20,33 +20,11 @@ import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 
 import { Footer } from '../footer'
+import { navItems } from '@/data/nav'
 
 export function NavbarComponent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isHomePage = pathname === '/'
-
-  const navItems = [
-    {
-      name: 'Home',
-      link: '/',
-    },
-    {
-      name: 'About',
-      link: '/about',
-    },
-    {
-      name: 'Projects',
-      link: '/projects',
-    },
-    {
-      name: 'Skills',
-      link: '/skills',
-    },
-    {
-      name: 'Contact',
-      link: '/contacts',
-    },
-  ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 

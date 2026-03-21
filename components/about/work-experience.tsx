@@ -1,34 +1,8 @@
 "use client";
 
 import React from "react";
-
-interface WorkItem {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
-}
-
-const workData: WorkItem[] = [
-  {
-    company: "PT Nutech Integrasi",
-    role: "Technician",
-    period: "2025 - Present",
-    description: "Maintaining technical systems and ensuring seamless integration of infrastructure components.",
-  },
-  {
-    company: "Freelance Web Dev",
-    role: "Web Developer",
-    period: "2024 - Present",
-    description: "Built and launched various web platforms, including projects like mindsetngedit.com, specializing in modern tech stacks.",
-  },
-  {
-    company: "KCIC",
-    role: "IT Technician & Front End Web Dev Intern",
-    period: "2024 - 2025",
-    description: "Supported IT infrastructure operations and contributed to front-end development of internal dashboard systems.",
-  },
-];
+import { WorkItem } from "@/types";
+import { workData } from "@/data/about";
 
 export function WorkExperience() {
   return (
