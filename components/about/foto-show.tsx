@@ -53,13 +53,13 @@ export default function FotoShow() {
                 <span className="ml-2">Areas</span>
             </h1>
 
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 w-full max-w-7xl mx-auto space-y-4">
+            <div className="flex flex-row overflow-x-auto sm:block sm:overflow-visible sm:columns-2 md:columns-3 gap-4 md:gap-6 w-full max-w-7xl mx-auto pb-8 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                 {description.map((photo) => (
                     <motion.div
                         key={photo.id}
                         layoutId={`card-${photo.id}`}
                         onClick={() => setSelectedId(photo.id)}
-                        className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-2xl"
+                        className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-2xl shrink-0 w-[85vw] sm:w-auto snap-center sm:mb-4 md:mb-6"
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -74,6 +74,7 @@ export default function FotoShow() {
                             <p className="text-white font-bold text-lg">{photo.header}</p>
                             <p className="text-white/80 text-sm line-clamp-2">{photo.desc}</p>
                         </div>
+
                     </motion.div>
                 ))}
             </div>

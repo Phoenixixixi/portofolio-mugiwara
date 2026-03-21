@@ -22,11 +22,11 @@ export default function ContactPage() {
 
                 {/* Social Cards Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <WobbleCard containerClassName="bg-blue-800 border border-neutral-800">
+                    <WobbleCard containerClassName="bg-blue-800 cursor-pointer" link="https://github.com/Phoenixixixi">
                         <Link
                             href="https://github.com/Phoenixixixi"
                             target="_blank"
-                            className="flex flex-col h-full justify-between"
+                            className="flex flex-col h-full justify-between cursor-pointer"
                         >
                             <div className="space-y-4">
                                 <IconBrandGithub className="w-12 h-12 text-white" />
@@ -41,11 +41,11 @@ export default function ContactPage() {
                         </Link>
                     </WobbleCard>
 
-                    <WobbleCard containerClassName="bg-fuchsia-800 border border-neutral-800">
+                    <WobbleCard containerClassName="bg-fuchsia-800 cursor-pointer" link="https://www.instagram.com/daastin.m/">
                         <Link
-                            href="https://instagram.com/your_handle"
+                            href="https://www.instagram.com/daastin.m/"
                             target="_blank"
-                            className="flex flex-col h-full justify-between"
+                            className="flex flex-col h-full justify-between cursor-pointer"
                         >
                             <div className="space-y-4">
                                 <IconBrandInstagram className="w-12 h-12 text-white" />

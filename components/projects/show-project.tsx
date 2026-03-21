@@ -96,7 +96,7 @@ function CardProject({ project, className }: { project: Project, className?: str
                     height={500}
                     unoptimized
                     alt={project.header}
-                    className={`absolute -right-10 md:-right-[20%] ${project.colSpan.md === 1 ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[10%] -bottom-10 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
+                    className={`absolute -right-60 md:-right-[20%] ${project.colSpan.md === 1 ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[50%] md:top-[10%] -bottom-10 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
                 />
             </div>
         </WobbleCard>

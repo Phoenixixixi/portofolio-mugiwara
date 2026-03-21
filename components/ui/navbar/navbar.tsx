@@ -37,7 +37,9 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4 z-99  ">
-            <Button variant="default"><FileDown /></Button>
+            <a href="/Muhammad Dustin-resume (11).pdf" download>
+              <Button variant="default"><FileDown /></Button>
+            </a>
             <ModeToggle />
           </div>
         </NavBody>
@@ -71,13 +73,13 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                <FileDown />
-              </NavbarButton>
+
+              <a href="/Muhammad Dustin-resume (11).pdf" download className="w-full">
+                <Button variant="default" className="w-full flex justify-center gap-2">
+                  <FileDown className="w-4 h-4" /> Download CV
+                </Button>
+              </a>
+
             </div>
           </MobileNavMenu>
         </MobileNav>
@@ -90,6 +92,6 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Navbar */}
-    </div>
+    </div >
   )
 }

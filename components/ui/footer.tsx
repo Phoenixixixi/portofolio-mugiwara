@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Instagram } from "lucide-react";
 
 interface FooterLink {
   name: string;
@@ -32,8 +32,8 @@ export function Footer() {
       title: "Socials",
       links: [
         { name: "GitHub", href: "https://github.com/Phoenixixixi", icon: <Github className="h-4 w-4" /> },
-        { name: "LinkedIn", href: "https://linkedin.com", icon: <Linkedin className="h-4 w-4" /> },
-        { name: "Twitter", href: "https://twitter.com", icon: <Twitter className="h-4 w-4" /> },
+        { name: "LinkedIn", href: "https://linkedin.com/in/muhammad-dustin", icon: <Linkedin className="h-4 w-4" /> },
+        { name: "Instagram", href: "https://www.instagram.com/daastin.m/", icon: <Instagram className="h-4 w-4" /> },
       ],
     },
     {

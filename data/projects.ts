@@ -14,7 +14,7 @@ export const projects: Project[] = [
         header: "Acme Admin Dashboard",
         description: "A robust financial management dashboard built with Next.js, featuring real-time invoice tracking, customer management, and insightful data visualizations.",
         image: "/images/next-learn.png",
-        link: "https://nextjs.org/learn",
+        link: "https://next-js-dashboard-ten-pink.vercel.app",
         colSpan: { default: 1, md: 1 },
         className: 'bg-purple-800',
         stack: ["Next.js", "PostgreSQL", "Tailwind CSS"]
@@ -23,7 +23,7 @@ export const projects: Project[] = [
         header: "Mugiwara Portfolio",
         description: "A modern, highly interactive personal portfolio showcasing fullstack development skills with a focus on creative design and performance.",
         image: "/images/porto-react.png",
-        link: "#",
+        link: "https://portofolio-mugiwara.vercel.app",
         colSpan: { default: 1, md: 1 },
         className: 'bg-blue-800',
         stack: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"]

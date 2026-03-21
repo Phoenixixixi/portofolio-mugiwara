@@ -7,10 +7,12 @@ export const WobbleCard = ({
   children,
   containerClassName,
   className,
+  link
 }: {
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  link?: string;
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -29,6 +31,11 @@ export const WobbleCard = ({
       onMouseLeave={() => {
         setIsHovering(false);
         setMousePosition({ x: 0, y: 0 });
+      }}
+      onClick={() => {
+        if (link) {
+          window.open(link, "_blank");
+        }
       }}
       style={{
         transform: isHovering

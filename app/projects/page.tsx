@@ -4,7 +4,7 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import ShowProject from "@/components/projects/show-project";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import MotivationText from "@/components/projects/motivation-text";
+
 
 export default function Page() {
     const containerRef = useRef<HTMLDivElement>(null);
