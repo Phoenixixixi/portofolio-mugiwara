@@ -74,7 +74,7 @@ function CardProject({ project, className }: { project: Project, className?: str
                     <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                         {project.header}
                     </h2>
-                    <p className="mt-4 text-left text-base/6 text-neutral-200">
+                    <p className="mt-4 text-left text-[.8rem] text-neutral-200">
                         {project.description}
                     </p>
 
@@ -92,11 +92,11 @@ function CardProject({ project, className }: { project: Project, className?: str
                 </div>
                 <Image
                     src={project.image}
-                    width={500}
-                    height={500}
+                    width={600}
+                    height={600}
                     unoptimized
                     alt={project.header}
-                    className={`absolute -right-60 md:-right-[20%] ${project.colSpan.md === 1 ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[50%] md:top-[10%] -bottom-10 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
+                    className={`absolute -right-40 md:-right-[20%] ${project.colSpan.md === 1 ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[70%] md:top-[10%] -bottom-40 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
                 />
             </div>
         </WobbleCard>

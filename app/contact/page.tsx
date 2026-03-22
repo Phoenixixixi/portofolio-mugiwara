@@ -10,7 +10,7 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen  px-4 py-24 md:py-32">
             <div className="max-w-7xl mx-auto space-y-24">
-                {/* Header Section */}
+
                 <div className="text-center space-y-4">
                     <h1 className="text-4xl md:text-6xl font-black  tracking-tighter">
                         Get in Touch
@@ -20,8 +20,8 @@ export default function ContactPage() {
                     </p>
                 </div>
 
-                {/* Social Cards Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-0">
                     <WobbleCard containerClassName="bg-blue-800 cursor-pointer" link="https://github.com/Phoenixixixi">
                         <Link
                             href="https://github.com/Phoenixixixi"

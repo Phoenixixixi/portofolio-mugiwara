@@ -45,7 +45,7 @@ export default function FotoShow() {
     const selectedPhoto = description.find(p => p.id === selectedId)
 
     return (
-        <div className="w-full flex flex-col items-center py-20 px-4">
+        <div className="w-full flex flex-col items-center py-20 md:px-4">
             <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
                 <Highlight className="text-white dark:text-black px-4">
                     Photography
