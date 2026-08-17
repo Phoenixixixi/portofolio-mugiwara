@@ -4,7 +4,8 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { NavbarComponent } from '@/components/ui/navbar/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
+import Music from '@/components/ui/navbar/music'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -23,25 +24,38 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Muhammad Dustin | Fullstack Developer",
-    template: "%s | Muhammad Dustin",
+    default: 'Muhammad Dustin | Fullstack Developer',
+    template: '%s | Muhammad Dustin',
   },
-  description: "Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in React, Next.js, and modern web technologies. Explore my projects, skills, and photography.",
-  keywords: ["Muhammad Dustin", "Portfolio", "Fullstack Developer", "Frontend Developer", "Next.js", "React", "Web Developer", "Software Engineer", "Tailwind CSS"],
-  authors: [{ name: "Muhammad Dustin" }],
-  creator: "Muhammad Dustin",
+  description:
+    'Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in React, Next.js, and modern web technologies. Explore my projects, skills, and photography.',
+  keywords: [
+    'Muhammad Dustin',
+    'Portfolio',
+    'Fullstack Developer',
+    'Frontend Developer',
+    'Next.js',
+    'React',
+    'Web Developer',
+    'Software Engineer',
+    'Tailwind CSS',
+  ],
+  authors: [{ name: 'Muhammad Dustin' }],
+  creator: 'Muhammad Dustin',
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://portofolio-mugiwara.vercel.app",
-    title: "Muhammad Dustin | Fullstack Developer",
-    description: "Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in modern web technologies.",
-    siteName: "Muhammad Dustin Portfolio",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://portofolio-mugiwara.vercel.app',
+    title: 'Muhammad Dustin | Fullstack Developer',
+    description:
+      'Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in modern web technologies.',
+    siteName: 'Muhammad Dustin Portfolio',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Muhammad Dustin | Fullstack Developer",
-    description: "Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in modern web technologies.",
+    card: 'summary_large_image',
+    title: 'Muhammad Dustin | Fullstack Developer',
+    description:
+      'Portfolio of Muhammad Dustin, a passionate Fullstack Developer specializing in modern web technologies.',
   },
 }
 
@@ -63,6 +77,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Music />
           <NavbarComponent>{children}</NavbarComponent>
           <Analytics />
         </ThemeProvider>

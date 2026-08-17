@@ -7,6 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'motion/react'
+import Link from 'next/link'
 
 import React, { useRef, useState } from 'react'
 
@@ -75,9 +76,9 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-            child as React.ReactElement<{ visible?: boolean }>,
-            { visible }
-          )
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible }
+            )
           : child
       )}
     </motion.div>
@@ -126,7 +127,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
@@ -140,7 +141,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   )
@@ -257,9 +258,9 @@ export const NavbarButton = ({
   className?: string
   variant?: 'primary' | 'secondary' | 'dark' | 'gradient'
 } & (
-    | React.ComponentPropsWithoutRef<'a'>
-    | React.ComponentPropsWithoutRef<'button'>
-  )) => {
+  | React.ComponentPropsWithoutRef<'a'>
+  | React.ComponentPropsWithoutRef<'button'>
+)) => {
   const baseStyles =
     'px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center'
 

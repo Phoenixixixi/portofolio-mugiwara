@@ -16,6 +16,7 @@ import { ModeToggle } from './theme-trigerred'
 import { useState } from 'react'
 import React from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 
@@ -28,7 +29,6 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-
   return (
     <div className="relative w-full">
       <Navbar className="top-5">
@@ -37,9 +37,11 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4 z-99  ">
-            <a href="/Muhammad Dustin-resume (11).pdf" download>
-              <Button variant="default"><FileDown /></Button>
-            </a>
+            <Link href="/Muhammad Dustin-resume (11).pdf" download>
+              <Button variant="default">
+                <FileDown />
+              </Button>
+            </Link>
             <ModeToggle />
           </div>
         </NavBody>
@@ -48,8 +50,7 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
-            <div className='flex justify-center items-center'>
-
+            <div className="flex justify-center items-center">
               <MobileNavToggle
                 isOpen={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -62,36 +63,40 @@ export function NavbarComponent({ children }: { children: React.ReactNode }) {
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
           >
+            {' '}
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
-
-              <a href="/Muhammad Dustin-resume (11).pdf" download className="w-full">
-                <Button variant="default" className="w-full flex justify-center gap-2">
+              <Link
+                href="/Muhammad Dustin-resume (11).pdf"
+                download
+                className="w-full"
+              >
+                <Button
+                  variant="default"
+                  className="w-full flex justify-center gap-2"
+                >
                   <FileDown className="w-4 h-4" /> Download CV
                 </Button>
-              </a>
-
+              </Link>
             </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
       <div className=" w-full min-h-screen md:p-26 md:pt-16 p-6 pt-8 flex flex-col ">
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         {!isHomePage && <Footer />}
       </div>
 
       {/* Navbar */}
-    </div >
+    </div>
   )
 }
