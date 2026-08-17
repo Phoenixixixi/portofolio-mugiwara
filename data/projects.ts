@@ -36,7 +36,7 @@ export const projects: Project[] = [
     description:
       'A modern website for varnellcollection. varnell is a brand from bandung that sell and create a leather shoes.',
     image: '/images/varnell.webp',
-    link: 'https://portofolio-mugiwara.vercel.app',
+    link: 'https://varnellcollection.com',
     colSpan: { default: 1, md: 1 },
     className: 'bg-green-800',
     stack: ['React', 'Laravel', 'MySQL', 'Tailwind CSS'],
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description:
       'An efficent system workflow for reporting device issues within KCIC, using waha for receive a message from whatsap and automate the reporting process using n8n with gemini model',
     image: '/images/reporting.webp',
-    link: 'https://portofolio-mugiwara.vercel.app',
+    link: 'https://kcic.kamargelap.online',
     colSpan: { default: 1, md: 2 },
     className: 'bg-red-800 col-span-2',
     stack: ['React', 'Laravel', 'MySQL', 'Tailwind CSS'],
