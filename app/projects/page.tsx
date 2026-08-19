@@ -33,7 +33,7 @@ export default function Page() {
               className="-top-40 left-0 md:-top-20 md:left-60"
               fill="white"
             />
-            <div className="w-full z-10 mx-auto max-w-7xl p-4 flex flex-col items-center justify-center h-full -rotate-90">
+            <div className="w-full z-10 mx-auto max-w-7xl p-4 flex flex-col items-center justify-center h-full pb-">
               <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-7xl font-bold text-transparent md:text-7xl">
                 Project <br />
               </h1>

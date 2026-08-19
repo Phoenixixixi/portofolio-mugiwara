@@ -1,31 +1,31 @@
-"use client";
-import React, { useRef, useEffect, useState } from "react";
-import { motion } from "motion/react";
+'use client'
+import React, { useRef, useEffect, useState } from 'react'
+import { motion } from 'motion/react'
 
 export const TextHoverEffect = ({
   text,
   duration,
 }: {
-  text: string;
-  duration?: number;
-  automatic?: boolean;
+  text: string
+  duration?: number
+  automatic?: boolean
 }) => {
-  const svgRef = useRef<SVGSVGElement>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-  const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
+  const svgRef = useRef<SVGSVGElement>(null)
+  const [cursor, setCursor] = useState({ x: 0, y: 0 })
+  const [hovered, setHovered] = useState(false)
+  const [maskPosition, setMaskPosition] = useState({ cx: '50%', cy: '50%' })
 
   useEffect(() => {
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
-      const svgRect = svgRef.current.getBoundingClientRect();
-      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
-      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
+      const svgRect = svgRef.current.getBoundingClientRect()
+      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100
+      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100
       setMaskPosition({
         cx: `${cxPercentage}%`,
         cy: `${cyPercentage}%`,
-      });
+      })
     }
-  }, [cursor]);
+  }, [cursor])
 
   return (
     <svg
@@ -62,17 +62,17 @@ export const TextHoverEffect = ({
           id="revealMask"
           gradientUnits="userSpaceOnUse"
           r="20%"
-          initial={{ cx: "50%", cy: "50%" }}
+          initial={{ cx: '50%', cy: '50%' }}
           animate={maskPosition}
-          transition={{ duration: duration ?? 0, ease: "easeOut" }}
+          transition={{ duration: duration ?? 0, ease: 'easeOut' }}
 
-        // example for a smoother animation below
+          // example for a smoother animation below
 
-        //   transition={{
-        //     type: "spring",
-        //     stiffness: 300,
-        //     damping: 50,
-        //   }}
+          //   transition={{
+          //     type: "spring",
+          //     stiffness: 300,
+          //     damping: 50,
+          //   }}
         >
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />
@@ -112,7 +112,7 @@ export const TextHoverEffect = ({
         }}
         transition={{
           duration: 4,
-          ease: "easeInOut",
+          ease: 'easeInOut',
         }}
       >
         {text}
@@ -130,5 +130,5 @@ export const TextHoverEffect = ({
         {text}
       </text>
     </svg>
-  );
-};
+  )
+}

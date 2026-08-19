@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Project } from '@/types'
 import { projects } from '@/data/projects'
 import { useRouter } from 'next/navigation'
+import clsx from 'clsx'
 
 const TechIcon = ({ name }: { name: string }) => {
   // Simple SVG icons for tech stack
@@ -78,14 +79,23 @@ const TechIcon = ({ name }: { name: string }) => {
 
 export default function ShowProject() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto w-full">
-      {projects.map((project, index) => (
-        <CardProject
-          key={index}
-          project={project}
-          className={project.className}
-        />
-      ))}
+    <div
+      className={
+        'grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto w-full'
+      }
+    >
+      {projects.map((project, index) => {
+        const isLatest: boolean = index === projects.length - 1
+
+        return (
+          <CardProject
+            key={index}
+            project={project}
+            isLatest={isLatest}
+            className={project.className}
+          />
+        )
+      })}
     </div>
   )
 }
@@ -93,9 +103,11 @@ export default function ShowProject() {
 function CardProject({
   project,
   className,
+  isLatest,
 }: {
   project: Project
   className?: string
+  isLatest: boolean
 }) {
   const router = useRouter()
 
@@ -107,7 +119,11 @@ function CardProject({
 
   return (
     <WobbleCard
-      containerClassName={`col-span-${project.colSpan.default} md:col-span-${project.colSpan.md} h-full bg-zinc-900 min-h-[500px] lg:min-h-[300px] cursor-pointer ${className}`}
+      containerClassName={clsx(
+        'col-span-2 md:col-span-1 h-full bg-zinc-900 min-h-[500px] lg:min-h-[300px] cursor-pointer',
+        isLatest && 'md:col-span-2',
+        className
+      )}
     >
       <div onClick={handleClick} className="relative h-full">
         <div className="max-w-xs relative z-10">
@@ -139,7 +155,7 @@ function CardProject({
           height={600}
           unoptimized
           alt={project.header}
-          className={`absolute -right-40 md:-right-[20%] ${project.colSpan.md === 1 ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[70%] md:top-[10%] -bottom-40 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
+          className={`absolute -right-40 md:-right-[20%] ${project.colSpan.md === 'col-span-1' ? 'lg:-right-[35%]' : 'lg:-right-[10%]'} top-[70%] md:top-[10%] -bottom-40 object-contain rounded-2xl opacity-50 hover:opacity-100 transition-opacity duration-500`}
         />
       </div>
     </WobbleCard>

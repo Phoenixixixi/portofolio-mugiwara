@@ -9,7 +9,7 @@ import {
 } from 'motion/react'
 import Link from 'next/link'
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 import Avatar from './avatar'
 
@@ -66,6 +66,18 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       setVisible(false)
     }
   })
+
+  useEffect(() => {
+    const handlemouse = (e: MouseEvent) => {
+      console.log(e)
+    }
+
+    window.addEventListener('mousemove', handlemouse)
+
+    return () => {
+      window.removeEventListener('mousemove', handlemouse)
+    }
+  }, [])
 
   return (
     <motion.div

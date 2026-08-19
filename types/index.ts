@@ -5,30 +5,30 @@ export interface Project {
   github?: string
   link: string
   colSpan: {
-    default: number
-    md: number
+    default: string
+    md: string
   }
   className?: string
   stack: string[]
 }
 
 export interface EducationItem {
-  institution: string;
-  degree: string;
-  period: string;
-  points: string[];
+  institution: string
+  degree: string
+  period: string
+  points: string[]
 }
 
 export interface WorkItem {
-  company: string;
-  role: string;
-  period: string;
-  description: string;
+  company: string
+  role: string
+  period: string
+  description: string
 }
 
 export interface NavItem {
-  name: string;
-  link: string;
+  name: string
+  link: string
 }
 
 export type State = {
