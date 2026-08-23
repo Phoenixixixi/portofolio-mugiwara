@@ -1,6 +1,7 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useLayoutEffect, useState } from 'react'
+import { motion } from 'motion/react'
 
 interface TextSize {
   height: number
@@ -14,14 +15,12 @@ export default function Animation() {
 
   const [max, setMax] = useState<Partial<TextSize>>({})
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const updateSize = () => {
-      const sizes = textSize.current.map((element) => {
-        return {
-          height: element.clientHeight,
-          width: element.clientWidth,
-        }
-      })
+      const sizes = textSize.current.map((element) => ({
+        height: element.clientHeight,
+        width: element.clientWidth,
+      }))
 
       if (sizes.length > 0) {
         setMax(searchMaxValue(sizes))
@@ -43,21 +42,38 @@ export default function Animation() {
       style={{
         width: `${max.width}px`,
         height: `${max.height}px`,
+        maskImage:
+          'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
+        WebkitMaskImage:
+          'linear-gradient(to bottom, transparent 0%, black 25%, black 100%)',
       }}
     >
-      {text.map((value, index) => (
-        <div
-          className="inline-block"
-          key={value}
-          ref={(element) => {
-            if (element) {
-              textSize.current[index] = element
-            }
-          }}
-        >
-          {value}
-        </div>
-      ))}
+      <motion.div
+        animate={{
+          y: [0, -max.height, -max.height * 2, 0],
+        }}
+        transition={{
+          duration: 10,
+          times: [0, 0.4, 0.75, 1],
+          ease: 'easeInOut',
+          repeat: Infinity,
+          repeatDelay: 2,
+        }}
+      >
+        {text.map((value, index) => (
+          <div
+            className="inline-block"
+            key={value}
+            ref={(element) => {
+              if (element) {
+                textSize.current[index] = element
+              }
+            }}
+          >
+            {value}
+          </div>
+        ))}
+      </motion.div>
     </div>
   )
 }
