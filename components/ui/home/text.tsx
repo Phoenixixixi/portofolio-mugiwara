@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useLayoutEffect, useState } from 'react'
+import { useRef, useLayoutEffect, useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 
 interface TextSize {
@@ -9,11 +9,14 @@ interface TextSize {
 }
 
 export default function Animation() {
-  const text: string[] = ['Frontend', 'Backend', 'Full Stack']
+  const text: string[] = ['Frontend', 'Backend', 'FullStack']
 
   const textSize = useRef<HTMLDivElement[]>([])
 
-  const [max, setMax] = useState<Partial<TextSize>>({})
+  const [max, setMax] = useState<TextSize>({
+    height: 0,
+    width: 0,
+  })
 
   useLayoutEffect(() => {
     const updateSize = () => {
